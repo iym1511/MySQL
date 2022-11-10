@@ -42,16 +42,15 @@ delete from Coding where ID =3;
 delete from Coding;
 
 /* 위에 작성한 insert를 통해 값을 넣어준후,
-id가 1인 Page를 100으로 업데이트하고
+ID가 1인 Page를 100으로 업데이트하고
 Author가 홍길동인 데이터를 삭제하세요.
 */
-
 insert into Coding (ID, Title, Author, Page) 
 value (1,"SQL","green",300);
 insert into Coding (ID, Title, Author, Page) 
-value (2,"JS","홍길동",300);
+value (2,"JS","홍길동",350);
 
-update Coding set Page = 100 where ID = 1; 
-delete from Coding where Author ="홍길동";
+update Coding set Page = 100 where ID = 1;  /*ID가 1인 Page를 100으로 업데이트*/
+delete from Coding where Author ="홍길동";	/*Author가 홍길동인 데이터를 삭제*/
 
 select * from Coding;
