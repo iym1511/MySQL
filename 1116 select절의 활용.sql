@@ -55,6 +55,23 @@ select max(length), title from film; /*제일 긴 영화제목*/
    film 테이블에서 replacement_cost 가 가장 큰 값을 출력
    film의 rental_rate가 3이상인 영화중에 lenght가 가장 작은것부터 정렬하여 영화제목과 lenght 5개를 출력하세요*/
 select min(length),  title from film;
+select * from film where length = 46;
 select max(replacement_cost) from film;
-select * from film where rental_rate <= 3 limit 0,5; 
-select min(length), title from film where rental_rate >= 3 limit 0,5;
+select * from film where replacement_cost = 29.99;
+select * from film where rental_rate >=3 order by length limit 0,5;
+
+/* count(): 현재 칼럼의 데이터개수 - count(distinct 필드), 
+avg() : 안에있는 값들의 평균
+sum() : 안에있는 값들의 총합
+*/
+select count(distinct length) from film; /*중복되는것을 제외한 데이터 길이*/
+select avg(length) as"평균길이" from film;
+select sum(length) as"전체길이의 합" from film;
+
+/* count()를 이용하여 rental_duration의 종류가 몇개가 되는지 출력하세요
+	avg()를 이용하여 rental_duration의 평균을 구하시오
+	sum()을 이용하여 rental_duration의 합계를 구하시오
+*/
+select count(distinct rental_duration) from film;
+select avg(rental_duration) from film;
+select sum(rental_duration) from film;
